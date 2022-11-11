@@ -1,16 +1,33 @@
-// DATA TYPES:
-// String, Numbers, boolean, undefined, symbols
-// semi-colons are not mandatory, but are recommended
+// Talking more about Strings
 
 const name = 'John';
 const age = 30;
-const rating = 4.5;
-const isCool = true;
-const x = null;
-// both y and z are undefined. Just the initialization using let makes it undefined
-const y = undefined;
-let z;
 
-// to test the types of the variables:
+// Concatenation
+console.log('My name is ' + name + ' and my age is ' + age + '.');
 
-console.log(typeof name);
+// Template Strings/ Template Literals
+// We use `` and wherever we want to use the variables, we use them using $ and curly braces
+// and in the curly braces, we use the name of the variable which we are using
+
+console.log(`My name is ${name} and my age is ${age}`);
+
+const hello = `My name is ${name} and my age is ${age}`;
+
+console.log(hello);
+
+// More properties of Strings:
+// Properties do not have "()", methods have ()
+
+const s = 'Hello World';
+const t = 'Computers, Technology, IT, Code';
+
+console.log(`The length of the string is ${s.length}`);
+console.log(`Upper case of the string ${s.toUpperCase()}`);
+console.log(`Lower case of the string ${s.toLowerCase()}`);
+console.log(`Substring with starting index of 0 and ending index of 5 is ${s.substring(0,5).toUpperCase()}`);
+// the following line of code returns an array of 11 elements
+console.log(s.split(''));
+console.log(t.split(','))
+
+
