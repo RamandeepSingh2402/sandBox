@@ -1,24 +1,16 @@
-// var, let and const
-// var has been used in the JS since beginning and is globally scoped
-// we dont use var anymore
+// DATA TYPES:
+// String, Numbers, boolean, undefined, symbols
+// semi-colons are not mandatory, but are recommended
 
-// let and const have block-level scope and both were added with the addition of ES-6 or ES-2015
+const name = 'John';
+const age = 30;
+const rating = 4.5;
+const isCool = true;
+const x = null;
+// both y and z are undefined. Just the initialization using let makes it undefined
+const y = undefined;
+let z;
 
-// What is the difference between let and const? :
-// Using let we can reassign the values
+// to test the types of the variables:
 
-
-
-/*
-    The following code block would give an error in the console, since age is mentioned as const
-    const age = 30;
-    age = 31;
-    console.log(age);
-*/
-
-/*
-    The following code block would display age as 31 in the console.
-    let age = 30;
-    age = 31;
-    console.log(age);
-*/
+console.log(typeof name);
