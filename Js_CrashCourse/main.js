@@ -54,3 +54,8 @@ console.log(todos);
 
 // printing from the array of the todos
 console.log(todos[2].text);
+
+
+// JSON
+const todoJSON = JSON.stringify(todos);
+console.log(todoJSON);
