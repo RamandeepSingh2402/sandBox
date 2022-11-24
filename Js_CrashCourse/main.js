@@ -59,3 +59,16 @@ console.log(todos[2].text);
 // JSON
 const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
+
+// LOOPS IN JavaScript
+// for loop
+for (let i = 0; i <= 10; i++) {
+    console.log(`For Loop Number: ${i}`);
+}
+
+// while loop
+let i = 0;
+while (i < 10) {
+    console.log(`While Loop Number: ${i}`);
+    i++;
+}
