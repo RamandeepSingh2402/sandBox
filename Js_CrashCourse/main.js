@@ -1,34 +1,56 @@
-// Arrays - variables that hold multiple values
-// In JS, an array can have different data types
+// We'll be learning about object literals
+// Object literals are basically key-value pairs    
 
-const fruits = ['Apples', 'Oranges', 'Pears', 10, true];
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30,
+    hobbies: ['music', 'movies', 'sports'],
+    address : {
+        street: '50 Main St',
+        city: 'Boston',
+        state: 'MA'
+    }
+}
 
-/*
-    we can manipulate the array, but we can't reassign the array like:
-    fruits = [];
-*/
+// accessing properties of objects
+console.log(person.firstName, person.lastName);
 
-// Adding more elements at the end
-fruits[5] = 'grapes';
+// accessing properties of properties
+console.log(person.hobbies[1]);
+console.log(person.address.city);
 
-// Better way to add more elements in an array
-// push() pushes elements at the end of an array
-fruits.push('banana');
+// using destructuring
+// pulling things out, meaning that we're pulling properties out of person
+const { firstName, lastName, address: {city} } = person;
+console.log(firstName, lastName, city);
 
-// Adding elements on the beginning of the array
-fruits.unshift('strawberries');
+// we can add the properties to the object
+// On printing the object, the print will be done on the basis og  alphabetical order of properties
+person.email = 'john@gmail.com';
+console.log(person);
 
-// Taking the last element off the array
-fruits.pop();
 
-// Check to see if something is in the array
-console.log(Array.isArray('hello'));
+// ARRAYS OF OBJECTS:
+const todos = [
+    {
+        id: 1,
+        text: 'Take out trash',
+        isComplete: true
+    },
+    {
+        id: 2,
+        text: 'Meeting with boss',
+        isComplete: true
+    },
+    {
+        id: 3,
+        text: 'Dentist appointment',
+        isComplete: false
+    }
+];
 
-// Getting the index of a certain value
-console.log(fruits.indexOf('oranges'));
+console.log(todos);
 
-// Accessing the whole array
-console.log(fruits);
-
-// Accessing particular elements of the array
-console.log(fruits[1]);
+// printing from the array of the todos
+console.log(todos[2].text);
