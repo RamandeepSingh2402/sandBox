@@ -1,23 +1,65 @@
-// FUNCTIONS
-
-// NaN means not a number
+// OOP
 
 /* 
-    For the function below, we've used the default value for the nums
-    which means that if no argument is provided for the function, then the function 
-    would use the default value, but on the other hand, if a default value is provided,
-    then whenever the function is called without any argument, then the function would be using it's default value.
+    For creating constructor function, it should start with a capital letter 
+    and for the parameters, we put only the properties which we want to set
+    "this" keyword specifies that we're setting up the properties of the (this) object.
+
+    We can have multiple functions and we can include these in the constructor, but it is not
+    recommended as we might not need all the functions for all, so as a workaround, we'd use prototypes 
+    to mention the functions separately.
+    To do this, we'd use nameOfTheConstructorFunction.prototype.nameOfTheFunction() and then define the function
+
+
+    In the example below the function getLastName() will be there in each and every object of the Person class, but using
+    Prototypes, we'd be mentioning and defining the functions specifically.
+
+
 */
-const addNums = num1 => num1 + 5;
 
-console.log(addNums(5));
-console.log(addNums(1));
 
-// todos.forEach((todo) => console.log(todo));
-
-const addingNum = (num1, num2) => {
-    console.log(`The sum of the nums is ${num1 + num2}`)
+// Constructor function
+function Person (firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dob = new Date(dob);
+    this.getLastName = () => {
+        return `${this.lastName}`;
+    }
 }
-addingNum(2,3);
 
-// lexical "this" keyword
+
+// Class
+class Person {
+    constructor(firstName, lastName, dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = new Date(dob);
+    }
+
+    getBirthYear(){
+        return this.dob.getFullYear();
+    }
+
+    getFullName()  {
+        return `${this.firstName} ${this.lastName}`
+    }
+}
+
+Person.prototype.getBirthYear = function() {
+    return this.dob.getFullYear();
+}
+
+Person.prototype.getFullName = () => {
+    return `${this.firstName} ${this.lastName}`;
+}
+
+// Instantiate an object
+const person1 = new Person('John', 'Doe', '4-3-1980');
+const person2 = new Person('Mary', 'Smith', '3-6-1970');
+
+console.log(person1);
+console.log(person2.getBirthYear());
+console.log(person2.getBirthYear());
+console.log(person2.getFullName());
+console.log(person1.firstName.getLastName());
