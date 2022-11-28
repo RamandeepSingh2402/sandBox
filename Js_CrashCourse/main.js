@@ -17,18 +17,6 @@
 
 */
 
-
-// Constructor function
-function Person (firstName, lastName, dob) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.dob = new Date(dob);
-    this.getLastName = () => {
-        return `${this.lastName}`;
-    }
-}
-
-
 // Class
 class Person {
     constructor(firstName, lastName, dob) {
@@ -46,9 +34,6 @@ class Person {
     }
 }
 
-Person.prototype.getBirthYear = function() {
-    return this.dob.getFullYear();
-}
 
 Person.prototype.getFullName = () => {
     return `${this.firstName} ${this.lastName}`;
@@ -62,4 +47,4 @@ console.log(person1);
 console.log(person2.getBirthYear());
 console.log(person2.getBirthYear());
 console.log(person2.getFullName());
-console.log(person1.firstName.getLastName());
+console.log(`This is a person object: ${person1}`)
