@@ -1,36 +1,20 @@
-/// DOM
+const ul = document.querySelector('.items');
 
-console.log(window);
+// changing the content of the first li
+ul.firstElementChild.textContent = 'Hello from the changed content of the first li';
 
-// we use "window." to access anything that is in the window 
+// using innerText of the returned node list
+ul.children[1].innerText = 'Brad';
 
-// window.alert(1);
+// changing the content of the last item
+ul.lastElementChild.innerHTML  = '<h1>Hello from h1</h1>';
 
-// Single element selectors
-const form = document.getElementById('my-form');
-console.log(form);
+// removing the last item
+ul.lastElementChild.remove();
 
-console.log(document.querySelector('.container'));
-
-// even if we have multiple selectors, it's gonna give us the first h1 tag only
-console.log(document.querySelector('h1'));
-
-
-// Multiple element selectors
-
-// it returns a node list which is similar to the array and we can also use the methods used on the arrays
-console.log(document.querySelectorAll('.item'));
-
-// returns an HTML collection
-// the difference is that for an HTML collection, we cannot use array methods, we'll have to convert it manually to arrays in order to use
-// array methods on it 
-console.log(document.getElementsByClassName('item'));
-
-// getELementByTagName()
-// this also returns HTML collection
-console.log(document.getElementsByTagName('li'));
+// removes the whole ul
+ul.remove();
 
 
-// loops through and grabs each and every present item
-const items = document.querySelectorAll('.item');
-items.forEach((item) => console.log(item));
+const btn = document.querySelector('.btn');
+btn.style.background = 'red';
