@@ -1,0 +1,31 @@
+index.js will create a root and the root will render the app from App.js
+App.js will have a function which will return a JSX element having the default files
+
+Why do we need Redux?
+What problem does redux solve?
+Whats the best way to manage state in our application? 
+Having components managing their own states which also prevents: PROPS DRILLING
+For each component having their own state, what if components are far away from each other
+and they need to share data which they generally would need.
+GLOBAL STATE:
+A single global state that all the components have unrestricted access to as there is no props drilling
+and there's no problem sharing state since by default all components share the entire state, but this is a nightmare in practice.
+Global State Management does solve our problems better than single or shared states and we can optimize its use by adding some restrictions and a set of rules.
+
+
+REDUX:
+- solves the problem of props drilling, state-sharing, global state chaos.
+- we have one central global state called the store that all our components can access.
+- It has all the objects
+            { REDUX STORE }
+    { REDUX ACTIONS }   { REDUCERS }
+
+REDUX ACTIONS: 
+    JSON objects consisting of two things, an action type (string naming the action)
+    and a payload of additional data.
+
+REDUCERS:
+    are Reduxes way of specifying what should happen to redux store when an action occurs.
+
+UNIDIRECTIONAL FLOW:
+ UI Triggers an action - State is updated - Components see updated state
